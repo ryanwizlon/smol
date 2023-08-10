@@ -1,19 +1,23 @@
-1. "openai_api_key": This is the API key for OpenAI that will be used across "main.py", "chatbot.py", "openai_api.py", and "self_improvement.py".
+Shared Dependencies:
 
-2. "session_logs": This is the JSON schema that will be used in "main.py", "chatbot.py", "self_improvement.py", and "session_logs.json" to log each session.
+1. "openai" - This is a Python library that will be used in "main.py", "chatbot.py", and "openai_api.py" to interact with the OpenAI API for generating chatbot responses.
 
-3. "chatbot": This is the main chatbot object that will be used across "main.py", "chatbot.py", "openai_api.py", and "self_improvement.py".
+2. "json" - This is a Python library that will be used in "main.py", "chatbot.py", and "update_logs.py" for handling .json logs detailing each session.
 
-4. "update_logs()": This function will be used in "main.py", "chatbot.py", and "self_improvement.py" to update the session logs.
+3. "requests" - This is a Python library that will be used in "openai_api.py" for making HTTP requests to the OpenAI API.
 
-5. "improve_bot()": This function will be used in "main.py", "chatbot.py", and "self_improvement.py" to improve the bot based on the session logs.
+4. "API_KEY" - This is an environment variable that will be used in "openai_api.py" to authenticate with the OpenAI API.
 
-6. "get_response()": This function will be used in "main.py", "chatbot.py", and "openai_api.py" to get the response from the chatbot.
+5. "session_logs" - This is a .json file that will be used in "main.py" and "update_logs.py" to store and update the chatbot's session logs.
 
-7. "README.md" and "improvement_suggestions.md": These files will contain instructions and suggestions for development, deployment, and improvement. They will be referenced in "main.py".
+6. "chatbot" - This is a class defined in "chatbot.py" that will be used in "main.py" to handle chatbot interactions.
 
-8. "api_get_request()": This function will be used in "main.py" and "openai_api.py" to make GET requests to the OpenAI API.
+7. "update_logs" - This is a function defined in "update_logs.py" that will be used in "main.py" to update the chatbot's session logs.
 
-9. "self_improvement": This is the module that will be used in "main.py" and "chatbot.py" for the bot to improve itself.
+8. "get_response" - This is a function defined in "openai_api.py" that will be used in "chatbot.py" to get responses from the OpenAI API.
 
-10. "openai_api": This is the module that will be used in "main.py" and "chatbot.py" to interact with the OpenAI API.
+9. "README.md" - This file will contain instructions on how to develop and deploy the application, which will be relevant to all other files.
+
+10. "improvement_suggestions.md" - This file will contain suggestions on how to improve the application, which will be relevant to all other files.
+
+11. "requirements.txt" - This file will list all the Python libraries required by the application, which will be relevant to all other files.

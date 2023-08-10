@@ -1,35 +1,31 @@
+```python
 import json
 from chatbot import ChatBot
-from openai_api import OpenAI_API
-from self_improvement import SelfImprovement
-
-openai_api_key = "YOUR_OPENAI_API_KEY"
-session_logs = "session_logs.json"
-
-def update_logs(session_data):
-    with open(session_logs, 'a') as f:
-        json.dump(session_data, f)
+from update_logs import update_logs
 
 def main():
-    chatbot = ChatBot(openai_api_key)
-    openai_api = OpenAI_API(openai_api_key)
-    self_improvement = SelfImprovement(session_logs)
+    # Initialize the chatbot
+    chatbot = ChatBot()
 
     while True:
+        # Get user input
         user_input = input("You: ")
-        if user_input.lower() == "quit":
+
+        # If the user types 'quit', end the session
+        if user_input.lower() == 'quit':
             break
 
+        # Get the chatbot's response
         response = chatbot.get_response(user_input)
-        print("ChatBot: ", response)
 
-        session_data = {
-            "user_input": user_input,
-            "bot_response": response
-        }
-        update_logs(session_data)
+        # Print the chatbot's response
+        print("ChatBot: " + response)
 
-        self_improvement.improve_bot()
+        # Update the session logs
+        update_logs(user_input, response)
+
+    print("Session ended.")
 
 if __name__ == "__main__":
     main()
+```

@@ -1,35 +1,54 @@
-# Customer Chat Bot using OpenAI
+# OpenAI Customer Chatbot
 
-This is a guide on how to develop and deploy the customer chat bot using OpenAI.
+This is a simple interface for creating a customer chatbot using OpenAI. The chatbot is self-improving through updates to its own .json logs detailing each session.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+You need to install the software specified in the `requirements.txt` file.
+
+```bash
+pip install -r requirements.txt
+```
+
+### Environment Variables
+
+You need to set the following environment variable:
+
+- `API_KEY`: Your OpenAI API key.
+
+### Running the Application
+
+To run the application, execute the following command:
+
+```bash
+python main.py
+```
+
+## Files
+
+- `main.py`: This is the main file that runs the application.
+- `chatbot.py`: This file contains the `chatbot` class that handles chatbot interactions.
+- `openai_api.py`: This file contains the `get_response` function that interacts with the OpenAI API.
+- `update_logs.py`: This file contains the `update_logs` function that updates the chatbot's session logs.
+- `session_logs.json`: This file stores the chatbot's session logs.
+- `improvement_suggestions.md`: This file contains suggestions on how to improve the application.
 
 ## Development
 
-1. Clone the repository to your local machine.
-
-2. Install the required dependencies by running `pip install -r requirements.txt`.
-
-3. Set your OpenAI API key as an environment variable. This can be done by adding the following line to your `.bashrc` or `.bash_profile`:
-
-    `export OPENAI_API_KEY='your-api-key'`
-
-4. The main entry point of the application is `main.py`. This script initializes the chat bot and starts the chat session.
-
-5. The `chatbot.py` file contains the ChatBot class which is responsible for handling the conversation with the user.
-
-6. The `openai_api.py` file contains the functions for interacting with the OpenAI API.
-
-7. The `self_improvement.py` file contains the functions for improving the bot based on the session logs.
-
-8. The `session_logs.json` file contains the logs of each session. The bot uses these logs to improve itself.
+For development purposes, you can make changes to the `chatbot.py`, `openai_api.py`, and `update_logs.py` files. After making changes, you can run the application using the command specified in the "Running the Application" section.
 
 ## Deployment
 
-1. Ensure that you have set your OpenAI API key as an environment variable.
+To deploy the application, you can use any cloud platform that supports Python applications. You need to set the environment variable and install the prerequisites specified in the "Prerequisites" and "Environment Variables" sections.
 
-2. Run `python main.py` to start the chat bot.
+## Contributing
 
-## Self Improvement
+As this application is intended for personal use, contributions are not currently accepted. However, you can refer to the `improvement_suggestions.md` file for ideas on how to improve the application.
 
-The bot improves itself by analyzing the logs of each session. After each session, the `update_logs()` function in `self_improvement.py` is called to update the `session_logs.json` file. The `improve_bot()` function is then called to improve the bot based on the updated logs.
+## License
 
-For more information on how to improve the bot, refer to the `improvement_suggestions.md` file.
+This project is licensed under the MIT License.
